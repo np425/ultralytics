@@ -585,7 +585,7 @@ class BaseTrainer:
             self.best.write_bytes(serialized_ckpt)  # save best.pt
             if (self.save_period > 0):
                 block = (self.epoch // self.save_period) * self.save_period
-                (self.wdir / f"epoch{block}_best.pt").write_bytes(serialized_ckpt)
+                (self.wdir / f"{block}ep_best.pt").write_bytes(serialized_ckpt)
         # if self.args.close_mosaic and self.epoch == (self.epochs - self.args.close_mosaic - 1):
         #    (self.wdir / "last_mosaic.pt").write_bytes(serialized_ckpt)  # save mosaic checkpoint
 
